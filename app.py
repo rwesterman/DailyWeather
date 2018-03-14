@@ -10,6 +10,8 @@ from weather_bot import send_message, retrieve_imageurl
 from set_location import decipher_location
 
 app = Flask(__name__)
+logging.basicConfig(level=logging.DEBUG)
+
 
 @app.route('/', methods = ['POST'])
 def webhook():
@@ -30,7 +32,7 @@ def webhook():
     }
     gm_words = gm_data['text'].split()
     try:
-        logging.debug(gm_words[0])
+        logging.debug(gm_words[0].lower())
 
         # if this doesn't throw an error, then the first word of text is in call_options
         call_options[gm_words[0]]
@@ -53,7 +55,7 @@ def webhook():
         logging.debug("Weather URL: {}".format(weather_url))
 
         weather_data, hours_left = call_weather_api(weather_url)
-        call_options[gm_words[0]](weather_data, hours_left, bot_id, address)
+        call_options[gm_words[0].lower()](weather_data, hours_left, bot_id, address)
     except KeyError as e:
         logging.warning("Text does not contain command call.")
 
@@ -83,11 +85,10 @@ def weather_call(weather_data, hours_left, bot_id, address):
     send_message(bot_id, txt="Hourly Precipitation for {}".format(address), img_url=precip_img)
 
 
-logging.basicConfig(level=logging.INFO)
 
-app = Flask(__name__)
-if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+# Only used for debugging
+# if __name__ == '__main__':
+#     logging.basicConfig(level=logging.INFO)
 
     # test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
     #

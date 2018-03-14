@@ -9,6 +9,8 @@ from plot_weather import plot_temps, plot_precip
 from weather_bot import send_message, retrieve_imageurl
 from set_location import decipher_location
 
+app = Flask(__name__)
+
 @app.route('/', methods = ['POST'])
 def webhook():
     # data received at GroupMe callback URL
@@ -81,10 +83,11 @@ def weather_call(weather_data, hours_left, bot_id, address):
     send_message(bot_id, txt="Hourly Precipitation for {}".format(address), img_url=precip_img)
 
 
+logging.basicConfig(level=logging.INFO)
+
+app = Flask(__name__)
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-
-    app = Flask(__name__)
 
     # test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
     #

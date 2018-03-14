@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 @app.route('/', methods = ['POST'])
-def webhook(test_data):
+def webhook():
     # data received at GroupMe callback URL
     gm_data = request.get_json()
     # gm_data = test_data

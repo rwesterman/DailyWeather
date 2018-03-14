@@ -87,10 +87,10 @@ def weather_call(weather_data, hours_left, bot_id, address):
 # Only used for debugging
 # if __name__ == '__main__':
 #     logging.basicConfig(level=logging.INFO)
-
-    # test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
-    #
-    # webhook(test_data)
+#
+#     test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
+#
+#     webhook(test_data)
 
 
 

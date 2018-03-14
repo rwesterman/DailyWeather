@@ -14,7 +14,7 @@ def upload_image(filename):
 
     # Check that the file exists locally
     if not os.path.exists(filename):
-        logging.warning("There is no local file here")
+        logging.warning("There is no local file here: {}".format(filename))
 
 
     GM_TOKEN = os.getenv("GM_TOKEN")
@@ -22,11 +22,13 @@ def upload_image(filename):
         'X-Access-Token': GM_TOKEN,
         'Content-Type': 'image/jpeg',
     }
-
-    with open(filename, 'rb') as f:
-        data = f.read()
-        response = requests.post('https://image.groupme.com/pictures', headers=headers, data=data)
-        response.raise_for_status()
+    try:
+        with open(filename, 'rb') as f:
+            data = f.read()
+            response = requests.post('https://image.groupme.com/pictures', headers=headers, data=data)
+            response.raise_for_status()
+    except FileNotFoundError as e:
+        logging.error("No local file was found, so no image was uploaded")
 
     # Delete file so there isn't a local overflow
     try:

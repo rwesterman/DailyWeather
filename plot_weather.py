@@ -1,9 +1,9 @@
+import matplotlib
+matplotlib.use('Agg')
 import datetime
 import logging
 import os
-import matplotlib
-from matplotlib import pyplot as plt, dates as md
-matplotlib.use('Agg')
+
 
 
 
@@ -22,39 +22,34 @@ def plot_precip(times, precip):
 def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = None, ymin = None):
     logging.debug("Y-Axis Values: {}".format(y))
 
-    # plt.subplots_adjust(bottom=0.2)
-    # plt.xticks(rotation=25)
-
-    ax = plt.gca()
+    ax = matplotlib.pyplot.gca()
     ax.set_xticks(x)
 
     # Determine if axes are automatically scaled. Temp plots will be, but precipitation plots won't
     if xmax or xmin:
-        plt.xlim(xmin, xmax)
-#         plt.autoscale(False)
+        matplotlib.pyplot.xlim(xmin, xmax)
     if ymax or ymin:
-        plt.ylim(ymin, ymax)
-#         plt.autoscale(False)
+        matplotlib.pyplot.ylim(ymin, ymax)
     if not (ymax or ymin or xmax or xmin):
-        plt.autoscale(True)
+        matplotlib.pyplot.autoscale(True)
 
-    plt.gcf().autofmt_xdate()
-    plt.title(title)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
+    matplotlib.pyplot.gcf().autofmt_xdate()
+    matplotlib.pyplot.title(title)
+    matplotlib.pyplot.xlabel(xlabel)
+    matplotlib.pyplot.ylabel(ylabel)
 
-    xfmt = md.DateFormatter('%H:%M')
+    xfmt = matplotlib.dates.DateFormatter('%H:%M')
     ax.xaxis.set_major_formatter(xfmt)
-    plt.plot(x, y, "o-")
-    plt.minorticks_off()
+    matplotlib.pyplot.plot(x, y, "o-")
+    matplotlib.pyplot.minorticks_off()
 
     # Create an appropriate filename
     fig_filename = os.path.join(os.getcwd(),"tmp","{}_{}".format(title,datetime.datetime.now().strftime("%m-%d_%H")))
     logging.info("Filepath: {}".format(fig_filename))
     # Save the figure locally. This will be deleted when the image is uploaded to Groupme hosting
-    plt.savefig(fig_filename)
+    matplotlib.pyplot.savefig(fig_filename)
 
     # This is necesary to prevent from layering your data on one plot, even across separate calls to the function.
-    plt.close()
+    matplotlib.pyplot.close()
 
     return fig_filename

@@ -5,6 +5,6 @@ geopy
 gunicorn
 # logging
 # os
-python3-tk
+# python3-tk
 # json
 # datetime

@@ -1,3 +1,5 @@
+#! python3
+
 import logging, os
 
 from flask import Flask, request
@@ -8,10 +10,10 @@ from weather_bot import send_message, retrieve_imageurl
 from set_location import decipher_location
 
 @app.route('/', methods = ['POST'])
-def webhook(test_data):
+def webhook():
     # data received at GroupMe callback URL
-    # gm_data = request.get_json()
-    gm_data = test_data
+    gm_data = request.get_json()
+    # gm_data = test_data
     logging.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')
@@ -84,7 +86,7 @@ if __name__ == '__main__':
 
     app = Flask(__name__)
 
-    # test_data = {"name": "dog johnson", "text": "temp YOU ARE THE SUCK"}
+    # test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
     #
     # webhook(test_data)
 

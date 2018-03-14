@@ -1,7 +1,10 @@
 import datetime
 import logging
 import os
+import matplotlib
 from matplotlib import pyplot as plt, dates as md
+matplotlib.use('Agg')
+
 
 
 def plot_temps(times, temps):

@@ -21,8 +21,15 @@ def webhook():
     logging.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')
-
     bot_id = os.getenv('GROUPME_BOT_ID')  # This is debug Bot
+
+    if not "bot" in gm_data['name'].lower():
+        bot_respond(gm_data, WEATHER_KEY, bot_id)
+
+    # This prevents a ValueError raised by Flask
+    return "OK"
+
+def bot_respond(gm_data, WEATHER_KEY, bot_id):
 
     # Dictionary mapping of possible commands
     call_options = {
@@ -30,6 +37,7 @@ def webhook():
         "precip": precip_call,
         "weather": weather_call
     }
+
     gm_words = gm_data['text'].split()
     try:
         logging.debug(gm_words[0].lower())
@@ -58,6 +66,9 @@ def webhook():
         call_options[gm_words[0].lower()](weather_data, hours_left, bot_id, address)
     except KeyError as e:
         logging.warning("Text does not contain command call.")
+
+    # This prevents a ValueError raised by Flask
+    return 'OK'
 
 
 def precip_call(weather_data, hours_left, bot_id, address):

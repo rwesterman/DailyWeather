@@ -1,5 +1,10 @@
 #! python3
 
+# TODO: Implement "compare" feature that plots two locations on one plot.
+# Todo: Set up plot_common() to take flag for closing figure
+# Todo: Add 3-day forecast feature(maybe more days?) and overlay precipitation chance on temp plot
+
+
 import logging, os
 
 from flask import Flask, request

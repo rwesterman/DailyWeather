@@ -18,7 +18,7 @@ def plot_temps(times, temps):
 def plot_precip(times, precip):
     """Plots hourly precipitation forecast and returns image filepath"""
 
-    return plot_common(times, precip, "Hourly Precipitation Forecast", "Hour", "% Chance of Precip", ymax = 100, ymin = 0)
+    return plot_common(times, precip, "Hourly Precipitation Forecast", "Hour", "% Chance of Precip", ymax = 1, ymin = 0)
 
 
 def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = None, ymin = None):

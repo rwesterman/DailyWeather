@@ -13,11 +13,11 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 
-# @app.route('/', methods = ['POST'])
+@app.route('/', methods = ['POST'])
 def webhook(test_data):
     # data received at GroupMe callback URL
-    # gm_data = request.get_json()
-    gm_data = test_data
+    gm_data = request.get_json()
+    # gm_data = test_data
     logging.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')

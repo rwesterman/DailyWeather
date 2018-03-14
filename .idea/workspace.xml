@@ -17,8 +17,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+            <state relative-caret-position="210">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding>
                 <element signature="e#12#30#0" expanded="true" />
               </folding>
@@ -370,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521042329303</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Allowing any capitalization of command terms">
+      <created>1521045856151</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521045856151</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -432,7 +439,8 @@
     <MESSAGE value="Attempting to change matplotlib backend to avoid tkinter bug" />
     <MESSAGE value="Continued Heroku debug" />
     <MESSAGE value="Prevented bot from responding to self. Now returning string from flask &#10;webhook" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prevented bot from responding to self. Now returning string from flask &#10;webhook" />
+    <MESSAGE value="Allowing any capitalization of command terms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allowing any capitalization of command terms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -557,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+        <state relative-caret-position="210">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="e#12#30#0" expanded="true" />
           </folding>

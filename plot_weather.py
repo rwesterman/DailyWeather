@@ -46,7 +46,7 @@ def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = No
     plt.minorticks_off()
 
     # Create an appropriate filename
-    fig_filename = os.path.join(os.getcwd(),"tmp","{}_{}".format(title,datetime.datetime.now().strftime("%m-%d_%H")))
+    fig_filename = os.path.join(os.getcwd(),"{}_{}".format(title,datetime.datetime.now().strftime("%m-%d_%H")))
     logging.info("Filepath: {}".format(fig_filename))
     # Save the figure locally. This will be deleted when the image is uploaded to Groupme hosting
     plt.savefig(fig_filename)

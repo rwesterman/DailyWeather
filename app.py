@@ -13,11 +13,11 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 
-@app.route('/', methods = ['POST'])
-def webhook():
+# @app.route('/', methods = ['POST'])
+def webhook(test_data):
     # data received at GroupMe callback URL
-    gm_data = request.get_json()
-    # gm_data = test_data
+    # gm_data = request.get_json()
+    gm_data = test_data
     logging.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')
@@ -38,9 +38,10 @@ def bot_respond(gm_data, WEATHER_KEY, bot_id):
         "weather": weather_call
     }
 
-    gm_words = gm_data['text'].split()
+    # force all words to lowecase then split on whitespace
+    gm_words = gm_data['text'].lower().split()
     try:
-        logging.debug(gm_words[0].lower())
+        logging.debug("SPLIT WORDS: {}".format(gm_words))
 
         # if this doesn't throw an error, then the first word of text is in call_options
         call_options[gm_words[0]]
@@ -63,7 +64,7 @@ def bot_respond(gm_data, WEATHER_KEY, bot_id):
         logging.debug("Weather URL: {}".format(weather_url))
 
         weather_data, hours_left = call_weather_api(weather_url)
-        call_options[gm_words[0].lower()](weather_data, hours_left, bot_id, address)
+        call_options[gm_words[0]](weather_data, hours_left, bot_id, address)
     except KeyError as e:
         logging.warning("Text does not contain command call.")
 
@@ -93,15 +94,5 @@ def weather_call(weather_data, hours_left, bot_id, address):
 
     temp_call(weather_data, hours_left, bot_id, address)
     precip_call(weather_data, hours_left, bot_id, address)
-
-
-# Only used for debugging
-# if __name__ == '__main__':
-#     logging.basicConfig(level=logging.INFO)
-#
-#     test_data = {"name": "dog johnson", "text": "temp Dallas Texas"}
-#
-#     webhook(test_data)
-
 
 

@@ -1,0 +1,10 @@
+flask
+requests
+matplotlib
+geopy
+gunicorn
+# logging
+# os
+python3-tk
+# json
+# datetime

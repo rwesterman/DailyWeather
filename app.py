@@ -62,28 +62,26 @@ def webhook():
 
 def precip_call(weather_data, hours_left, bot_id, address):
     p_times, precip = get_precip(weather_data, hours_left)
-    precip_filepath = plot_precip(p_times, precip)
+    try:
+        precip_filepath = plot_precip(p_times, precip)
+    except FileNotFoundError as e:
+        logging.error("Local file not found: {}".format(e))
     precip_img = retrieve_imageurl(precip_filepath)
     send_message(bot_id, txt="Hourly Precipitation for {}".format(address), img_url=precip_img)
 
 def temp_call(weather_data, hours_left, bot_id, address):
     t_times, temps = get_forecast(weather_data, hours_left)
-    temp_filepath = plot_temps(t_times, temps)
+    try:
+        temp_filepath = plot_temps(t_times, temps)
+    except FileNotFoundError as e:
+        logging.error("Local file not found: {}".format(e))
     temp_img = retrieve_imageurl(temp_filepath)
     send_message(bot_id, txt ="Hourly Temperature for {}".format(address), img_url=temp_img)
 
 def weather_call(weather_data, hours_left, bot_id, address):
 
-    t_times, temps = get_forecast(weather_data, hours_left)
-    temp_filepath = plot_temps(t_times, temps)
-    temp_img = retrieve_imageurl(temp_filepath)
-    send_message(bot_id, txt="Hourly Temperature for {}".format(address), img_url=temp_img)
-
-    p_times, precip = get_precip(weather_data, hours_left)
-    precip_filepath = plot_precip(p_times, precip)
-    precip_img = retrieve_imageurl(precip_filepath)
-    send_message(bot_id, txt="Hourly Precipitation for {}".format(address), img_url=precip_img)
-
+    temp_call(weather_data, hours_left, bot_id, address)
+    precip_call(weather_data, hours_left, bot_id, address)
 
 
 # Only used for debugging

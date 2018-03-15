@@ -17,16 +17,48 @@ from set_location import decipher_location
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
+# For the fantasy football chat
+@app.route('/FF', methods = ['POST'])
+def ff_webhook():
+    # data received at GroupMe callback URL
+    gm_data = request.get_json()
+    logging.info("Received {}".format(gm_data))
 
-@app.route('/', methods = ['POST'])
-def webhook():
+    WEATHER_KEY = os.getenv('WEATHER_KEY')
+    bot_id = os.getenv('FF_BOT_ID')  # This is debug Bot
+
+    if not "bot" in gm_data['name'].lower():
+        bot_respond(gm_data, WEATHER_KEY, bot_id)
+
+    # This prevents a ValueError raised by Flask
+    return "OK"
+
+# For personal debug chat
+@app.route('/debug', methods = ['POST'])
+def debug_webhook():
     # data received at GroupMe callback URL
     gm_data = request.get_json()
     # gm_data = test_data
     logging.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')
-    bot_id = os.getenv('GROUPME_BOT_ID')  # This is debug Bot
+    bot_id = os.getenv('DEBUG_BOT_ID')  # This is debug Bot
+
+    if not "bot" in gm_data['name'].lower():
+        bot_respond(gm_data, WEATHER_KEY, bot_id)
+
+    # This prevents a ValueError raised by Flask
+    return "OK"
+
+# For the weather chat
+@app.route('/weather', methods = ['POST'])
+def weather_webhook():
+    # data received at GroupMe callback URL
+    gm_data = request.get_json()
+    logging.info("Received {}".format(gm_data))
+
+    WEATHER_KEY = os.getenv('WEATHER_KEY')
+    bot_id = os.getenv('WEATHER_BOT_ID')  # This is debug Bot
 
     if not "bot" in gm_data['name'].lower():
         bot_respond(gm_data, WEATHER_KEY, bot_id)

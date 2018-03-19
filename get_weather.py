@@ -1,5 +1,6 @@
 import datetime
 import json
+import logging
 
 import requests
 
@@ -37,45 +38,28 @@ def call_weather_api(url):
     return data, hours_left
 
 
-def get_forecast(weather_data, hours_left):
+def get_forecast(weather_data, hours_left, search_term):
     """
+    Returns forecast based on search_term input. Currently Temp or Precipiation Chance
 
     :param weather_data: JSON weather data from API
     :param hours_left: Number of hours left in day or 12, whichever is higher
+    :param search_term:
     :return: Return two lists.
     times is list of hours in the "hours_left" period
-    temps is list of temperatures corresponding to those hours
+    forecast is list of temperatures/precipitations corresponding to those hours
     """
 
     # hourly_block holds datablocks for each hour, this will be iterated on below
     hourly_block = weather_data['hourly']['data']
-    times, temps = [], []
+    times, forecast = [], []
 
     # Converting to string with strftime wraps back to zero. Need to send matplotlib a datetime obj, but only show hours
     # Seems like the best way to do this is pass full datetime object, then use matplotlib.dates.DateFormatter()
     for hour in range(hours_left):
         times.append((dt_from_timestamp(hourly_block[hour]['time'])))
-        temps.append(hourly_block[hour]['temperature'])
+        forecast.append(hourly_block[hour][search_term])
 
-    return times, temps
+    logging.debug("Times from weather_data: {}\nForecast from weather_data: {}".format(times, forecast))
 
-
-def get_precip(weather_data, hours_left):
-    """
-
-    :param weather_data: JSON weather data from API
-    :param hours_left: Number of hours left in day or 12, whichever is higher
-    :return: Return two lists.
-    times is list of hours in the "hours_left" period
-    precip is list of precipiation chance corresponding to those hours
-    """
-
-    # hourly_block holds datablocks for each hour, this will be iterated on below
-    hourly_block = weather_data['hourly']['data']
-    times, precip = [], []
-
-    for hour in range(hours_left):
-        times.append((dt_from_timestamp(hourly_block[hour]['time'])))
-        precip.append(hourly_block[hour]['precipProbability'])
-
-    return times, precip
+    return times, forecast

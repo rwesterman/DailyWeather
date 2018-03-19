@@ -15,6 +15,25 @@ from set_location import decipher_location
 
 app = Flask(__name__)
 
+# log_setting will choose proper logging level setting based on env level set through Heroku. Defaults to logging.INFO
+log_setting = {
+    "DEBUG": logging.DEBUG,
+    "INFO": logging.INFO,
+    "WARNING": logging.WARNING,
+    "ERROR": logging.ERROR
+}
+
+try:
+    log_level = log_setting[os.getenv("LOG_LEVEL")]
+except KeyError as e:
+    print("No environmental variable set for LOG_LEVEL")
+    log_level = logging.DEBUG
+
+print("Log level set to ".format(str(log_level)))
+
+logging.basicConfig(level=log_level)
+
+
 # For the fantasy football chat
 @app.route('/FF', methods = ['POST'])
 def ff_webhook():
@@ -137,19 +156,3 @@ def weather_call(weather_data, hours_left, bot_id, address):
     precip_call(weather_data, hours_left, bot_id, address)
 
 
-if __name__ == '__main__':
-    # log_setting will choose proper logging level setting based on env level set through Heroku. Defaults to logging.INFO
-    log_setting = {
-        "DEBUG": logging.DEBUG,
-        "INFO": logging.INFO,
-        "WARNING": logging.WARNING,
-        "ERROR": logging.ERROR
-    }
-
-    try:
-        log_level = log_setting[os.getenv("LOG_LEVEL")]
-    except KeyError as e:
-        print("No environmental variable set for LOG_LEVEL")
-        log_level = logging.INFO
-
-    logging.basicConfig(level=log_level)

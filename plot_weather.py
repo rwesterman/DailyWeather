@@ -6,20 +6,16 @@ import datetime
 import logging
 import os
 
-
-
-
 def plot_temps(times, temps):
     """Plots hourly temperature forecast and returns image filepath"""
-    logging.debug("Datetimes taken from Weather API: {}".format(times))
 
     return plot_common(times, temps, "Hourly Temperature Forecast", "Hour", "Temperature (F)")
 
 
 def plot_precip(times, precip):
     """Plots hourly precipitation forecast and returns image filepath"""
-    logging.debug("Datetimes taken from Weather API: {}".format(times))
 
+    # Set ymax to 1 because precip chance is value between 0 and 1
     return plot_common(times, precip, "Hourly Precipitation Forecast", "Hour", "% Chance of Precip", ymax = 1, ymin = 0)
 
 

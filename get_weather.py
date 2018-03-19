@@ -1,13 +1,27 @@
 import datetime
 import json
 import logging
-
+import pytz
 import requests
 
 
-def dt_from_timestamp(timestamp):
-    """Returns datetime object from timestamp"""
-    return datetime.datetime.fromtimestamp(timestamp)
+def dt_from_timestamp(timestamp, local_timezone):
+    """
+    Returns datetime object in the local timezone for the weather call
+    :param timestamp: Unix time stamp
+    :param local_timezone: Local time zone taken from Weather API
+    :return:
+    """
+    dt_object = datetime.datetime.fromtimestamp(timestamp)
+    local_tz = pytz.timezone(local_timezone)
+    try:
+        # Convert to the local timezone of the given lat/lng
+        dt_object_tz = dt_object.astimezone(local_tz)
+
+        return dt_object_tz
+    except pytz.exceptions.NonExistentTimeError as e:
+        logging.warning("Unable to convert to local timezone")
+        return dt_object
 
 
 def gethour(timestamp):
@@ -57,9 +71,9 @@ def get_forecast(weather_data, hours_left, search_term):
     # Converting to string with strftime wraps back to zero. Need to send matplotlib a datetime obj, but only show hours
     # Seems like the best way to do this is pass full datetime object, then use matplotlib.dates.DateFormatter()
     for hour in range(hours_left):
-        times.append((dt_from_timestamp(hourly_block[hour]['time'])))
+        times.append((dt_from_timestamp(hourly_block[hour]['time'], weather_data['timezone'])))
         forecast.append(hourly_block[hour][search_term])
 
-    logging.debug("Times from weather_data: {}\nForecast from weather_data: {}".format(times, forecast))
+    logging.debug("get_forecast times: {}\nget_forecast weather: {}".format(times, forecast))
 
     return times, forecast

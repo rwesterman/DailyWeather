@@ -11,19 +11,34 @@ import os
 
 def plot_temps(times, temps):
     """Plots hourly temperature forecast and returns image filepath"""
+    logging.debug("Datetimes taken from Weather API: {}".format(times))
 
     return plot_common(times, temps, "Hourly Temperature Forecast", "Hour", "Temperature (F)")
 
 
 def plot_precip(times, precip):
     """Plots hourly precipitation forecast and returns image filepath"""
+    logging.debug("Datetimes taken from Weather API: {}".format(times))
 
     return plot_common(times, precip, "Hourly Precipitation Forecast", "Hour", "% Chance of Precip", ymax = 1, ymin = 0)
 
 
-def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = None, ymin = None):
-    logging.debug("Y-Axis Values: {}".format(y))
+def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = None, ymin = None, close = True):
+    """
+    Function that handles the plotting of gathered data. This can be called for temp or precipitation currently
 
+    :param x: X axis values, typically time
+    :param y: Y axis values, either time or precipitation
+    :param title: Title to give to the graph
+    :param xlabel: X axis label
+    :param ylabel: Y axis label
+    :param xmax: optional, used to directly scale x axis
+    :param xmin: optional, used to directly scale x axis
+    :param ymax: optional, used to directly scale y axis
+    :param ymin: optional, used to directly scale y axis
+    :param close: optional, determines if plot is closed between calls. Setting to False allows layering plots
+    :return:
+    """
     ax = plt.gca()
     ax.set_xticks(x)
 
@@ -55,6 +70,7 @@ def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = No
     plt.savefig(fig_filename)
 
     # This is necesary to prevent from layering your data on one plot, even across separate calls to the function.
-    plt.close()
+    if close:
+        plt.close()
 
     return fig_filename

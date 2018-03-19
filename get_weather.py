@@ -47,6 +47,7 @@ def get_forecast(weather_data, hours_left):
     temps is list of temperatures corresponding to those hours
     """
 
+    # hourly_block holds datablocks for each hour, this will be iterated on below
     hourly_block = weather_data['hourly']['data']
     times, temps = [], []
 
@@ -68,6 +69,8 @@ def get_precip(weather_data, hours_left):
     times is list of hours in the "hours_left" period
     precip is list of precipiation chance corresponding to those hours
     """
+
+    # hourly_block holds datablocks for each hour, this will be iterated on below
     hourly_block = weather_data['hourly']['data']
     times, precip = [], []
 

@@ -1,0 +1,4 @@
+2018-03-21 15:28:23,912 - test - ERROR - Unit test failure! Error: datetime.datetime(2018, 1, 1, 4, 0) != datetime.datetime(2018, 1, 1, 5, 0)
+2018-03-21 15:28:23,916 - test - ERROR - Unit test failure! Error: datetime.datetime(2018, 1, 1, 5, 0) != datetime.datetime(2018, 1, 1, 6, 0)
+2018-03-21 15:28:23,920 - test - ERROR - Unit test failure! Error: datetime.datetime(2018, 1, 1, 6, 0) != datetime.datetime(2018, 1, 1, 7, 0)
+2018-03-21 15:28:23,924 - test - ERROR - Unit test failure! Error: datetime.datetime(2018, 1, 1, 7, 0) != datetime.datetime(2018, 1, 1, 8, 0)

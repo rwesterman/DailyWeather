@@ -133,7 +133,7 @@ def weather_call(weather_data, hours_left, bot_id, address):
     precip_call(weather_data, hours_left, bot_id, address)
 
 def setup_logging(
-        default_path = os.path.join(os.getcwd(),"logging.json"),
+    default_path = os.path.join(os.path.abspath(os.sep),"logging.json"),
         default_level = logging.INFO,
         env_key = 'LOG_CFG'):
     """
@@ -145,6 +145,7 @@ def setup_logging(
     """
     path = default_path
     value = os.getenv(env_key, None)
+    print("The path given to the logger config file is {}".format(path))
     if value:
         path = value
     if os.path.exists(path):
@@ -153,6 +154,8 @@ def setup_logging(
             logging.config.dictConfig(config)
     else:
         logging.basicConfig(level = default_level)
+        logging.error("Wasn't able to configure loggers from file!")
+        raise Exception("Logging config failed, raising exception for debug!")
 
 if __name__ == '__main__':
     setup_logging()

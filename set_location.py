@@ -23,9 +23,10 @@ def decipher_location(location = "Austin Texas"):
     # If no matching location found, geo_loc == None
     # If this happens, print no location found, defaulting to Austin Tx
     if not geo_loc:
-        logging.warning("Location not found, defaulting to Austin Tx")
+        loc_logger.warning("Location not found, defaulting to Austin Tx")
         geo_loc = geolocator.geocode("Austin Texas")
-    logging.info("Input location was {}, found location is {}".format(location, geo_loc.address))
-    logging.info("Location Latitude: {}, Longitude: {}".format(geo_loc.latitude, geo_loc.longitude))
+    loc_logger.info("Input location was {}, found location is {}".format(location, geo_loc.address))
+    loc_logger.info("Location Latitude: {}, Longitude: {}".format(geo_loc.latitude, geo_loc.longitude))
     return geo_loc.latitude, geo_loc.longitude, geo_loc.address
 
+loc_logger = logging.getLogger("app.locator")

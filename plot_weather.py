@@ -35,6 +35,9 @@ def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = No
     :param close: optional, determines if plot is closed between calls. Setting to False allows layering plots
     :return:
     """
+
+    weather_logger.debug("plot_weather x-axis values: {}".format(x))
+
     ax = plt.gca()
     ax.set_xticks(x)
 
@@ -56,12 +59,17 @@ def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = No
     plt.plot(x, y, "o-")
     plt.minorticks_off()
 
-    if not os.path.exists("/app/tmp/"):
-        os.mkdir("/app/tmp/")
+    root_path = os.path.abspath(os.sep)
+    weather_logger.debug("Root Path is {}".format(root_path))
+    local_path = os.path.join(root_path, "tmp")
+    weather_logger.debug("Local Path is {}".format(local_path))
 
+    if not os.path.exists(local_path):
+        # os.mkdir("/app/tmp/")
+        os.mkdir(local_path)
     # Create an appropriate filename
-    fig_filename = os.path.join("/app/tmp/","{}_{}.png".format(title,datetime.datetime.now().strftime("%m-%d_%H")))
-    logging.info("Filepath: {}".format(fig_filename))
+    fig_filename = os.path.join(local_path,"{}_{}.png".format(title,datetime.datetime.now().strftime("%m-%d_%H")))
+    weather_logger.info("Filepath: {}".format(fig_filename))
     # Save the figure locally. This will be deleted when the image is uploaded to Groupme hosting
     plt.savefig(fig_filename)
 
@@ -70,3 +78,5 @@ def plot_common(x, y, title, xlabel, ylabel, xmax = None, xmin = None, ymax = No
         plt.close()
 
     return fig_filename
+
+weather_logger = logging.getLogger("app.weather")

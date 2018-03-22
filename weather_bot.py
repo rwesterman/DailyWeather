@@ -14,7 +14,7 @@ def upload_image(filename):
 
     # Check that the file exists locally
     if not os.path.exists(filename):
-        logging.warning("There is no local file here: {}".format(filename))
+        bot_logger.warning("There is no local file here: {}".format(filename))
 
 
     GM_TOKEN = os.getenv("GM_TOKEN")
@@ -28,7 +28,7 @@ def upload_image(filename):
             response = requests.post('https://image.groupme.com/pictures', headers=headers, data=data)
             response.raise_for_status()
     except FileNotFoundError as e:
-        logging.error("No local file was found, so no image was uploaded")
+        bot_logger.error("No local file was found, so no image was uploaded")
 
     # Delete file so there isn't a local overflow
     try:
@@ -36,7 +36,7 @@ def upload_image(filename):
     except OSError:
         pass
 
-    logging.debug("upload_image returns: {}".format(response.content))
+    bot_logger.debug("upload_image returns: {}".format(response.content))
     return response.content
 
 
@@ -57,10 +57,9 @@ def send_message(bot_id, txt = None, img_url = None, lat =  None, long = None):
         "location" : { "lat" : lat,"lng" : long}
     }
 
-    logging.debug("Posted data: {}".format(send_data))
+    bot_logger.debug("Posted data: {}".format(send_data))
 
     r = requests.post(GM_url, data = send_data)
-    logging.info(r.status_code)
     r.raise_for_status()
 
 
@@ -71,6 +70,8 @@ def retrieve_imageurl(filepath):
     :return:
     """
     img_json = json.loads(upload_image(filepath))
-    logging.debug("Image URL: {}".format(img_json['payload']['picture_url']))
+    bot_logger.debug("Image URL: {}".format(img_json['payload']['picture_url']))
 
     return img_json['payload']['picture_url']
+
+bot_logger = logging.getLogger("app.bot")

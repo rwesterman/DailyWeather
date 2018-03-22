@@ -14,13 +14,19 @@ def dt_from_timestamp(timestamp, local_timezone):
     """
     dt_object = datetime.datetime.fromtimestamp(timestamp)
     local_tz = pytz.timezone(local_timezone)
+
+    weather_logger.debug("Original DT object: {}".format(dt_object))
+
     try:
         # Convert to the local timezone of the given lat/lng
         dt_object_tz = dt_object.astimezone(local_tz)
 
-        return dt_object_tz
+        weather_logger.debug("Adjusted DT object: {}\n".format(dt_object_tz.replace(tzinfo = None)))
+
+        # return the adjusted datetime object but without the timezone awareness
+        return dt_object_tz.replace(tzinfo = None)
     except pytz.exceptions.NonExistentTimeError as e:
-        logging.warning("Unable to convert to local timezone")
+        weather_logger.warning("Unable to convert to local timezone")
         return dt_object
 
 
@@ -74,6 +80,8 @@ def get_forecast(weather_data, hours_left, search_term):
         times.append((dt_from_timestamp(hourly_block[hour]['time'], weather_data['timezone'])))
         forecast.append(hourly_block[hour][search_term])
 
-    logging.debug("get_forecast times: {}\nget_forecast weather: {}".format(times, forecast))
+    weather_logger.debug("get_forecast times: {}\nget_forecast weather: {}".format(times, forecast))
 
     return times, forecast
+
+weather_logger = logging.getLogger("app.weather")

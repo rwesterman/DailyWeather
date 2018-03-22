@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed7b7afc-c73d-4807-a3cd-ee7d430e043d" name="Default" comment="Logging changes, working on unit testing, updated timezone conversion" />
+    <list default="true" id="ed7b7afc-c73d-4807-a3cd-ee7d430e043d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logging.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,14 +16,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="142" column="19" lean-forward="true" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
-              <folding>
-                <element signature="e#247#271#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1479">
+              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -26,8 +29,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
               <folding>
                 <element signature="e#1#22#0" expanded="true" />
               </folding>
@@ -50,8 +53,8 @@
       <file leaf-file-name="plot_weather.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plot_weather.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+            <state relative-caret-position="197">
+              <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,8 +63,8 @@
       <file leaf-file-name="weather_bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weather_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+            <state relative-caret-position="153">
+              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -69,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_location.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="set_location.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/set_location.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="406">
+              <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -92,7 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>times</find>
       <find>log_level</find>
       <find>logging.debug</find>
       <find>get_forecast</find>
@@ -116,12 +118,13 @@
       <find>test_logger</find>
       <find>self.test_logger</find>
       <find>info</find>
-      <find>log</find>
       <find>weather</find>
       <find>weather_logger</find>
       <find>test</find>
       <find>loc</find>
       <find>loc_logger</find>
+      <find>sep</find>
+      <find>log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,12 +137,12 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
         <option value="$USER_HOME$/Downloads/weather_bot.py" />
         <option value="$PROJECT_DIR$/GetWeather.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/get_weather.py" />
         <option value="$PROJECT_DIR$/plot_weather.py" />
         <option value="$PROJECT_DIR$/weather_bot.py" />
         <option value="$PROJECT_DIR$/set_location.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -198,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -293,8 +296,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.app" />
+        <item index="0" class="java.lang.String" itemvalue="Python.app" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
         <item index="2" class="java.lang.String" itemvalue="Python.set_location" />
         <item index="3" class="java.lang.String" itemvalue="Python.weather_bot" />
         <item index="4" class="java.lang.String" itemvalue="Python.scratch_2" />
@@ -459,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521736987238</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Debugging logger issues on Heroku">
+      <created>1521737694474</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1521737694474</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -537,7 +547,8 @@
     <MESSAGE value="Added routing through flask for multiple group chats" />
     <MESSAGE value="Added debug messages for incorrect time axis plots." />
     <MESSAGE value="Added timezone conversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added timezone conversion" />
+    <MESSAGE value="Debugging logger issues on Heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging logger issues on Heroku" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -620,31 +631,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="142" column="19" lean-forward="true" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
-          <folding>
-            <element signature="e#247#271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda3/Lib/json/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="348" column="0" lean-forward="true" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -658,31 +649,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plot_weather.py">
+    <entry file="file://$PROJECT_DIR$/set_location.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="406">
+          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/weather_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="76" column="41" lean-forward="false" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/set_location.py">
+    <entry file="file://$PROJECT_DIR$/plot_weather.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="197">
+          <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="150" column="26" lean-forward="false" selection-start-line="150" selection-start-column="26" selection-end-line="150" selection-end-column="26" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#1#22#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

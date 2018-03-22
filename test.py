@@ -149,6 +149,5 @@ class weather_test_case(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    setup_logging()
     unittest.main()
 

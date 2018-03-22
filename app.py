@@ -4,8 +4,8 @@
 # Todo: Set up plot_common() to take flag for closing figure
 # Todo: Add 3-day forecast feature(maybe more days?) and overlay precipitation chance on temp plot
 
-import logging, os, json
-
+import os, json
+import logging.config
 from flask import Flask, request
 
 from get_weather import call_weather_api, get_forecast
@@ -14,6 +14,7 @@ from weather_bot import send_message, retrieve_imageurl
 from set_location import decipher_location
 
 app = Flask(__name__)
+
 
 # For the fantasy football chat
 @app.route('/FF', methods = ['POST'])
@@ -133,7 +134,7 @@ def weather_call(weather_data, hours_left, bot_id, address):
     precip_call(weather_data, hours_left, bot_id, address)
 
 def setup_logging(
-    default_path = os.path.join(os.path.abspath(os.sep),"logging.json"),
+    default_path = os.path.join(os.getcwd(),"logging","config.json"),
         default_level = logging.INFO,
         env_key = 'LOG_CFG'):
     """
@@ -157,8 +158,5 @@ def setup_logging(
         logging.error("Wasn't able to configure loggers from file!")
         raise Exception("Logging config failed, raising exception for debug!")
 
-if __name__ == '__main__':
-    setup_logging()
-    app_log = logging.getLogger("app")
-
-
+setup_logging()
+app_log = logging.getLogger("app")

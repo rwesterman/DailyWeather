@@ -223,3 +223,159 @@
 2018-03-21 18:04:35,532 - test - INFO - Imported Test Logger
 2018-03-21 18:04:35,547 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
 2018-03-21 18:04:36,946 - get_weather.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-21_18.png
+2018-03-23 13:23:36,636 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 13:23:37,777 - test - INFO - Testing compare_call method in app.py
+2018-03-23 13:23:42,263 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_13.png
+2018-03-23 15:35:22,403 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 15:35:23,333 - test - INFO - Testing compare_call method in app.py
+2018-03-23 15:35:24,422 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_15.png
+2018-03-23 15:36:26,421 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 15:36:27,170 - test - INFO - Testing compare_call method in app.py
+2018-03-23 15:36:27,269 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_15.png
+2018-03-23 15:41:52,276 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 15:41:53,101 - test - INFO - Testing compare_call method in app.py
+2018-03-23 15:41:54,126 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_15.png
+2018-03-23 15:46:00,565 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 15:46:01,441 - test - INFO - Testing compare_call method in app.py
+2018-03-23 15:46:01,540 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_15.png
+2018-03-23 15:49:17,283 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 15:49:18,132 - test - INFO - Testing compare_call method in app.py
+2018-03-23 15:49:19,134 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_15.png
+2018-03-23 16:17:51,491 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 16:17:52,388 - test - INFO - Testing compare_call method in app.py
+2018-03-23 16:17:52,723 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-23 16:17:52,723 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-23 16:17:53,733 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-23 16:17:53,734 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-23 16:17:53,736 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 16:17:54,155 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-23 16:17:57,427 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-23_16.png
+2018-03-23 16:17:57,502 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-23_16.png
+2018-03-23 16:17:57,552 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-23 16:17:57,990 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-23 16:17:58,386 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-23_16.png
+2018-03-26 17:44:38,159 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:44:39,573 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:44:39,879 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:44:39,880 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:44:40,904 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:44:40,905 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:44:40,913 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:44:41,444 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:45:54,743 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:45:55,857 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:45:56,107 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:45:56,108 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:45:56,336 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:45:56,337 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:45:56,345 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:45:56,860 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:45:57,785 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:45:58,207 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:45:58,508 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:45:59,146 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:45:59,730 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 17:47:36,936 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:47:38,204 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:47:38,462 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:47:38,462 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:47:38,736 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:47:38,737 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:47:38,744 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:47:39,214 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:47:44,239 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:47:44,396 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:47:44,512 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:47:45,060 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:47:45,736 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 17:49:39,076 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:49:40,266 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:49:40,536 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:49:40,537 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:49:40,770 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:49:40,771 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:49:40,779 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:49:41,339 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:49:42,308 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:49:42,728 - app.weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:49:42,830 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:49:43,301 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:49:44,182 - app.weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 17:53:09,860 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:53:11,234 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:53:11,789 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:53:11,789 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:53:12,029 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:53:12,030 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:53:12,036 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:53:12,619 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:53:13,630 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:53:13,848 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:53:14,081 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:53:14,526 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:53:15,016 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 17:55:57,983 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:55:59,216 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:55:59,488 - app.locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:55:59,489 - app.locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:55:59,722 - app.locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:55:59,723 - app.locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:55:59,730 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:56:00,184 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:56:04,691 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:56:05,064 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:56:05,259 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:56:05,686 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:56:06,321 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 17:58:43,322 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:58:44,601 - test - INFO - Testing compare_call method in app.py
+2018-03-26 17:58:44,880 - locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 17:58:44,881 - locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 17:58:45,118 - locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 17:58:45,119 - locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 17:58:45,126 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:58:45,716 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 17:58:46,943 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:58:47,127 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_17.png
+2018-03-26 17:58:47,364 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 17:58:48,107 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 17:58:48,654 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_17.png
+2018-03-26 18:00:19,006 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:00:20,246 - test - INFO - Testing compare_call method in app.py
+2018-03-26 18:00:20,509 - locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 18:00:20,510 - locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 18:00:20,753 - locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 18:00:20,754 - locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 18:00:20,764 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:00:21,272 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:00:22,211 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:00:22,674 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:00:23,000 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 18:00:23,464 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 18:00:23,979 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_18.png
+2018-03-26 18:01:54,513 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:01:55,787 - test - INFO - Testing compare_call method in app.py
+2018-03-26 18:01:56,044 - locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 18:01:56,046 - locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 18:01:56,284 - locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 18:01:56,284 - locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 18:01:56,292 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:01:56,839 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:01:57,782 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:01:58,040 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:01:58,376 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 18:01:58,759 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 18:01:59,313 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_18.png
+2018-03-26 18:04:29,556 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:04:30,891 - test - INFO - Testing compare_call method in app.py
+2018-03-26 18:04:31,141 - locator - INFO - Input location was Austin, found location is Austin, Texas
+2018-03-26 18:04:31,141 - locator - INFO - Location Latitude: 30.26759000000004, Longitude: -97.74298999999996
+2018-03-26 18:04:31,375 - locator - INFO - Input location was Los Angeles, found location is Los Angeles, California
+2018-03-26 18:04:31,375 - locator - INFO - Location Latitude: 34.05349000000007, Longitude: -118.24531999999999
+2018-03-26 18:04:31,375 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:04:31,890 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.forecast.io
+2018-03-26 18:04:33,458 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:04:33,859 - weather - INFO - Filepath: C:\tmp\Hourly Temp Comparison_03-26_18.png
+2018-03-26 18:04:34,156 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): image.groupme.com
+2018-03-26 18:04:34,607 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTPS connection (1): api.groupme.com
+2018-03-26 18:04:35,081 - weather - INFO - Filepath: C:\tmp\Hourly Temperature Forecast_03-26_18.png

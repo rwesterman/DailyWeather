@@ -16,7 +16,6 @@ def upload_image(filename):
     if not os.path.exists(filename):
         bot_logger.warning("There is no local file here: {}".format(filename))
 
-
     GM_TOKEN = os.getenv("GM_TOKEN")
     headers = {
         'X-Access-Token': GM_TOKEN,
@@ -40,7 +39,7 @@ def upload_image(filename):
     return response.content
 
 
-def send_message(bot_id, txt = None, img_url = None, lat =  None, long = None):
+def send_message(bot_id, txt=None, img_url=None, lat=None, long=None):
     """
     Sends a message as the specified GroupMe bot, uses reqeusts.POST to send data
     :param bot_id: specific ID code for GroupMe Bot
@@ -54,12 +53,12 @@ def send_message(bot_id, txt = None, img_url = None, lat =  None, long = None):
         'bot_id': bot_id,
         'text': txt,
         'picture_url': img_url,
-        "location" : { "lat" : lat,"lng" : long}
+        "location": {"lat": lat, "lng": long}
     }
 
     bot_logger.debug("Posted data: {}".format(send_data))
 
-    r = requests.post(GM_url, data = send_data)
+    r = requests.post(GM_url, data=send_data)
     r.raise_for_status()
 
 
@@ -74,4 +73,5 @@ def retrieve_imageurl(filepath):
 
     return img_json['payload']['picture_url']
 
-bot_logger = logging.getLogger("app.bot")
+
+bot_logger = logging.getLogger("bot")

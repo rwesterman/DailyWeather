@@ -1,11 +1,14 @@
-from geopy.geocoders import LiveAddress, GoogleV3, ArcGIS
-from geopy.geocoders import get_geocoder_for_service
 import logging
+
+from geopy.geocoders import ArcGIS
+from geopy.geocoders import get_geocoder_for_service
+
 
 def pick_geocoder(service):
     print(get_geocoder_for_service(service))
 
-def decipher_location(location = "Austin Texas"):
+
+def decipher_location(location="Austin Texas"):
     """
     Receives text describing location, returns geographical coordinates lat and lng
     :param location: String giving user location, defaults to Austin Tx
@@ -29,4 +32,5 @@ def decipher_location(location = "Austin Texas"):
     loc_logger.info("Location Latitude: {}, Longitude: {}".format(geo_loc.latitude, geo_loc.longitude))
     return geo_loc.latitude, geo_loc.longitude, geo_loc.address
 
-loc_logger = logging.getLogger("app.locator")
+
+loc_logger = logging.getLogger("locator")

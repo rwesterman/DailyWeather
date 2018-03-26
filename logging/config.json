@@ -48,7 +48,7 @@
             "propagate": "no"
         },
 		"weather": {
-			"level": "DEBUG",
+			"level": "INFO",
 			"handlers": ["console"],
 			"propagate": "no"
 		},

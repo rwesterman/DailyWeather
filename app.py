@@ -59,7 +59,7 @@ def weather_webhook():
     app_log.info("Received {}".format(gm_data))
 
     WEATHER_KEY = os.getenv('WEATHER_KEY')
-    bot_id = os.getenv('WEATHER_BOT_ID')  # This is debug Bot
+    bot_id = os.getenv('WEATHER_BOT_ID')
 
     if not "bot" in gm_data['name'].lower():
         bot_respond(gm_data, WEATHER_KEY, bot_id)
@@ -98,27 +98,27 @@ def bot_respond(gm_data, WEATHER_KEY, bot_id):
         # Branch if calling for comparison so weather call can be run twice, this will all be done in compare_call method
         if gm_words[0] == "compare":
             compare_call(WEATHER_KEY, bot_id, gm_words)
+        else:
+            # get location from text, pass to decipher_location()
+            # taking every word after the first and joining as a location string
+            location = []
+            for i in range(1, len(gm_words)):
+                location.append(gm_words[i])
+            location = " ".join(location)
 
-        # get location from text, pass to decipher_location()
-        # taking every word after the first and joining as a location string
-        location = []
-        for i in range(1, len(gm_words)):
-            location.append(gm_words[i])
-        location = " ".join(location)
+            # Get latitude, longitude, and the location's address
+            lat, lng, address = decipher_location(location)
 
-        # Get latitude, longitude, and the location's address
-        lat, lng, address = decipher_location(location)
+            # Call the weather API for this location
+            weather_url = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat, lng)
 
-        # Call the weather API for this location
-        weather_url = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat, lng)
+            # Make call to API to receive weather data
+            weather_data, hours_left = call_weather_api(weather_url)
 
-        # Make call to API to receive weather data
-        weather_data, hours_left = call_weather_api(weather_url)
-
-        # Use dictionary call_options to determine what method to call here
-        call_options[gm_words[0]](weather_data, hours_left, bot_id, address)
-        app_log.debug("FORMATTED PARAMETERS:\n"
-                      "Current Hour: {}\nFirst Data Hour: {}\n")
+            # Use dictionary call_options to determine what method to call here
+            call_options[gm_words[0]](weather_data, hours_left, bot_id, address)
+            app_log.debug("FORMATTED PARAMETERS:\n"
+                          "Current Hour: {}\nFirst Data Hour: {}\n")
     except KeyError as e:
         app_log.warning("Text does not contain command call.")
 
@@ -172,45 +172,56 @@ def compare_call(WEATHER_KEY, bot_id, gm_words):
     """
     # Todo: Make this robust. Look below for edge cases to consider
     # User sends "Compare vs City", with no first location
-    # User sends "Compare Austin vs" with no second location
+    # User sends "Compare City vs" with no second location
     # User sends no "vs" statement - should error out
 
 
     # This method assumes that the first word of a message was "compare"
     # From there, it will determine the two addresses being compared by finding the strings on either side of 'vs'
     # Then it will gather weather data for each of these addresses, and call plot_compare() to obtain a figure.
-    test_logger = logging.getLogger("test")
     try:
         vs_index = gm_words.index("vs")
-        addr1 = " ".join(gm_words[1:vs_index])
-        addr2 = " ".join(gm_words[vs_index + 1:])
-        test_logger.debug("Address1: {}, Address2: {}".format(addr1, addr2))
 
-        # Obtain the lat, lng, and found address for each of the prompted locations
-        lat1, lng1, address1 = decipher_location(addr1)
-        lat2, lng2, address2 = decipher_location(addr2)
+        # Check if 'vs' comes right after "Compare", meaning no first city entered
+        if vs_index == 1:
+            raise ValueError("Invalid comparison call, must provide two locations")
 
-        # Call the weather API for each location
-        weather_url1 = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat1, lng1)
-        weather_url2 = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat2, lng2)
+        # Next, check if 'vs' is the last word, meaning no second city entered
+        elif vs_index == len(gm_words) - 1:
+            raise ValueError("Invalid comparison call, must provide two locations")
 
-        # Parse API weather data for each location
-        weather_data1, hours_left = call_weather_api(weather_url1)
-        weather_data2, hours_left = call_weather_api(weather_url2)
+        else:
+            addr1 = " ".join(gm_words[1:vs_index])
+            addr2 = " ".join(gm_words[vs_index + 1:])
+            test_logger.debug("Address1: {}, Address2: {}".format(addr1, addr2))
 
-        times, temps1 = get_forecast(weather_data1, hours_left, search_term='temperature')
-        times, temps2 = get_forecast(weather_data2, hours_left, search_term='temperature')
+            # Obtain the lat, lng, and found address for each of the prompted locations
+            lat1, lng1, address1 = decipher_location(addr1)
+            lat2, lng2, address2 = decipher_location(addr2)
 
-        try:
-            temp_filepath = plot_compare(times, temps1, temps2, address1, address2)
-            temp_img = retrieve_imageurl(temp_filepath)
-            send_message(bot_id, txt="Temperature compare between {} and {}".format(address1, address2),
-                         img_url=temp_img)
-        except FileNotFoundError as e:
-            app_log.error("Local file not found: {}".format(e))
+            # Call the weather API for each location
+            weather_url1 = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat1, lng1)
+            weather_url2 = "https://api.forecast.io/forecast/{}/{},{}".format(WEATHER_KEY, lat2, lng2)
+
+            # Parse API weather data for each location
+            weather_data1, hours_left = call_weather_api(weather_url1)
+            weather_data2, hours_left = call_weather_api(weather_url2)
+
+            times, temps1 = get_forecast(weather_data1, hours_left, search_term='temperature')
+            times, temps2 = get_forecast(weather_data2, hours_left, search_term='temperature')
+
+            try:
+                temp_filepath = plot_compare(times, temps1, temps2, address1, address2)
+                temp_img = retrieve_imageurl(temp_filepath)
+                send_message(bot_id, txt="Temperature compare between {} and {}".format(address1, address2),
+                             img_url=temp_img)
+            except FileNotFoundError as e:
+                app_log.error("Local file not found: {}".format(e))
 
     except IndexError as e:
         app_log.warning("No use of 'vs' in the call, therefore no command was processed")
+    except ValueError as e:
+        app_log.error("Invalid comparison call, must provide two locations")
 
 
 def setup_logging(
@@ -241,3 +252,4 @@ def setup_logging(
 
 setup_logging()
 app_log = logging.getLogger("app")
+test_logger = logging.getLogger("test")

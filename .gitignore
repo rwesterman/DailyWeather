@@ -1,0 +1,5 @@
+# Ignore local logs
+*.log
+
+# Ignore locally generated test files
+test_*
